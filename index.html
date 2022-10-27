@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="todo.css">
+        <title>TO-DO LIST</title>
+        <meta charset="UTF-8">
+            <!--meta tag needed here in order to add emojis-->
+    </head>
+    <header>
+        <div class="ripple-1"></div>
+        <div class="ripple-2"></div>
+        <div class="ripple-3"></div>
+        <div class="ripple-4"></div>
+        <div class="ripple-5"></div>
+    </header>
+    <body>
+    <div class="container-parent">
+        <div class="container-1">
+            <div class="header">
+                <h1 id="title2">To Do List</h1>
+            </div>
+            <div class="Affirmation">
+                <p id="enjoy"> Enjoy your <span id="weekday"></span>🌅😎</p> 
+            </div>
+        </div>
+        <div class="container-logo">    
+            <div class="logo">
+                <img src="https://tinyurl.com/2p8zsvtn" id="checkmark" width=55px; height=55px;>
+            </div>
+        </div>
+        <div class="container">
+            <div id="newtask">
+                <input class="input" type="text" id="enter" placeholder="Enter Task ..." maxlength="100" autofocus="autofocus">
+                <button class="ripple" onclick="clears()" id="clear"> Clear </button>
+                <button class="ripple" onclick="addToDo();counter()" id="add"> Add </button>
+            </div>
+        </div>
+        <div class="container-2" style="overflow:auto">   
+            <ul id="todos"; ></ul>
+        </div>
+        <div class="footer">
+            <span class="madeby">Made by: </span><span class="paulmattthew">Paul.Matthew</span>🌺
+        </div>
+    </div>  
+    <div class="error-messages"></div>  
+        <script type="text/javascript" src="todo.js"></script>
+    </body>
+
+</html>

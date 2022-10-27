@@ -1,0 +1,263 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+body {
+  background: #42A5F5;
+}
+.container-parent{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+
+}
+  h1 {
+    font-size: 50px; color: rgb(1, 1, 43); 
+  }
+  #enjoy {
+    font-size: 20px; color: rgb(1, 1, 43); 
+  }
+.container-logo {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    right:0%;
+    top: 0%;
+  }
+  .logo img {
+    border-radius: 50px;
+    border:5px solid blue;
+    border-style:outset;
+  }
+.footer{
+   font-family:georgia;
+   position: relative;
+   top:21px;
+}
+  .madeby{
+    color:rgb(170, 29, 29);
+  }
+  .paulmattthew{
+    color: blue;
+  }
+.container{
+  width: 450px;
+  background: white;
+  border-radius: 10px;
+  border: 5px solid blue;
+  border-style:outset;
+  position:relative;
+  top:10px;
+}
+  #newtask input{
+    width: 55%;
+    height: 35px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+  }
+
+  #newtask {
+    position: relative;
+    padding: 15px 20px;
+  }
+  #newtask input:focus{
+    outline: none;
+    border-color: #0d75ec;
+  }
+  .container button {
+    position: relative;
+    float: right;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #0d75ec;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    margin-right: 5px;
+  }
+   .container button:hover {
+    background-color: #4049c5;
+    transition: background-color 0.2s ease-in;
+  }
+  .error-messages{/*will try to fix this*/
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    font-weight:500;
+    align-items:center;
+  }
+.container-2 {
+  background: #63b5f8;
+  border-radius: 10px;
+  border: 5px solid blue;
+  border-style:outset;
+  min-width: 450px;
+  width:70%;
+  height:390px;
+  position:relative;
+  display:flex; /*So that the overflow defaults to scrolled all the way to the right*/
+  flex-direction: row-reverse; /*So that the overflow defaults to scrolled all the way to the right*/
+  top: 20px;
+  
+}
+
+  #todos{
+    font-family:'Arial Narrow';
+    white-space: nowrap;
+    font-weight: bolder;
+    align-items: center;
+    background-color:#63b5f8;
+    padding: 0px 5px;
+    margin-top: 0px;
+    list-style-type: none;/*to remove the bullet symbols*/
+    width: 300%;/*larger than 100% to ensure that li text is scrolled all the way to the right in overflow container-2 */
+    position:relative;
+    text-align: right; 
+  }
+/*@media only screen and (max-width: 600px) {
+  #enter {
+    width: 15em;
+  }
+}*/
+
+  .container-2 button {
+    font-family: 'Poppins',sans-serif;
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    background-color: #0d75ec;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 100%;
+    min-height: 30px;
+    width: 50px;
+    max-width: 60px;
+    border-radius: 5px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  .container-2 button:hover {
+    background-color: #4049c5;
+    transition: background-color 0.2s ease-in;
+  }
+
+ /*list fade in*/
+  li {
+    animation: fade-anim 1s ease
+ }
+ @keyframes fade-anim {
+ 0% {
+     opacity: 0;
+ }
+ 100% {
+     opacity: 1;
+ }
+ }
+  .strike {/* strikethrough done todo */
+    text-decoration: line-through;
+    color:red;
+  }
+/*button animation below*/
+  button {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  button:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  }
+  button:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+/*The background ripple code below */
+header{
+  min-height: 100vh;
+  background-color: #42A5F5;
+  position:fixed;
+}
+.ripple-1,
+.ripple-2,
+.ripple-3,
+.ripple-4,
+.ripple-5{
+  height: 1px;
+  width: 1px;
+  /*'to move cloud direction; position: absolute;*/
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate3d(-50%, 50%, 0);
+  animation-name:ripple;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  will-change: transform, opacity;
+}
+
+.ripple-1{
+  animation-delay: 0;
+}
+
+.ripple-2{
+  animation-delay: 1s;
+}
+
+.ripple-3{
+  animation-delay: 2s;
+}
+
+.ripple-4{
+  animation-delay: 3s;
+}
+
+.ripple-4{
+  animation-delay: 4s;
+}
+
+.ripple-5{
+  animation-delay: 5s;
+}
+
+main{
+  height: 4000px;
+  background-color: #f7f7f7;
+}
+
+@keyframes ripple{
+  0%{
+    transform: translate3d(-50%, 50%, 0) scale(0);
+    opacity: .33;
+  }
+  100%{
+    transform: translate3d(-50%, 50%, 0) scale(2000);
+    opacity: 0;
+  }
+}
+
+
+
