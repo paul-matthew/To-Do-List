@@ -27,10 +27,14 @@ body {
     right:0%;
     top: 0%;
   }
+  .container-logo:hover {
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s ease-in;
+  }
   .logo img {
-    border-radius: 50px;
+    border-radius: 5px;
     border:5px solid blue;
-    border-style:outset;
+    border-style:hidden;
   }
 .footer{
    font-family:georgia;
