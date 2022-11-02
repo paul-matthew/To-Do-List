@@ -8,45 +8,46 @@
 body {
   background: #42A5F5;
 }
-.container-parent{
-  display:flex;
-  flex-direction:column;
-  align-items: center;
+
+/*BANNER*/
+
+.container-banner{
+  overflow:hidden;
+  background-color: rgb(59, 48, 211);
+  border: 5px solid rgb(59, 48, 180);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index:2
+}
+.logo{
+  position:absolute;
+  right: 0;
 
 }
-  h1 {
-    font-size: 50px; color: rgb(1, 1, 43); 
-  }
-  #enjoy {
-    font-size: 20px; color: rgb(1, 1, 43); 
-  }
-.container-logo {
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    right:0%;
-    top: 0%;
-  }
-  .container-logo:hover {
-    filter: brightness(0) invert(1);
-    transition: filter 0.2s ease-in;
-  }
-  .logo img {
-    border-radius: 5px;
-    border:5px solid blue;
-    border-style:hidden;
-  }
-.footer{
-   font-family:georgia;
-   position: relative;
-   top:21px;
+.PM:hover {
+  filter: brightness(0) invert(1);
+  transition: filter 0s ease-in;
 }
-  .madeby{
-    color:rgb(170, 29, 29);
-  }
-  .paulmattthew{
-    color: blue;
-  }
+
+h1 {
+  font-size: 50px; color: rgb(1, 1, 43);
+  font-family: Helvetica;
+  text-align: center; 
+  right:10px;
+}
+#enjoy {
+  font-size: 20px; color: rgb(214, 214, 228);
+  text-align: center;  
+}
+
+/*MAIN CONTENT*/
+
+.container-content{
+  margin-top: 80px;
+}
+
+
 .container-input{
   width: 450px;
   background: white;
@@ -54,7 +55,11 @@ body {
   border: 5px solid blue;
   border-style:outset;
   position:relative;
-  top:10px;
+  top:25px;
+  left:0;
+  right:0;
+  margin:auto;
+ 
 }
   #newtask input{
     width: 55%;
@@ -62,7 +67,6 @@ body {
     padding: 12px;
     color: #111111;
     font-weight: 500;
-    position: relative;
     border-radius: 5px;
     font-family: 'Poppins',sans-serif;
     font-size: 15px;
@@ -99,13 +103,7 @@ body {
     background-color: #4049c5;
     transition: background-color 0.2s ease-in;
   }
-  .error-messages{/*will try to fix this*/
-    display: flex;
-    position:absolute;
-    flex-direction: column;
-    font-weight:500;
-    align-items:center;
-  }
+ 
 .container-list {
   background: #63b5f8;
   border-radius: 10px;
@@ -113,11 +111,15 @@ body {
   border-style:outset;
   min-width: 450px;
   width:70%;
-  height:65vh;
+  height:63vh;
   position:relative;
+  left:0;
+  right:0;
+  margin:auto;
   display:flex; /*So that the overflow defaults to scrolled all the way to the right*/
   flex-direction: row-reverse; /*So that the overflow defaults to scrolled all the way to the right*/
-  top: 20px;
+  top: 35px;
+  
   
 }
 
@@ -140,7 +142,7 @@ body {
   }
 }*/
 
-  .container- button {
+  .container-list button {
     font-family: 'Poppins',sans-serif;
     margin-left: 10px;
     margin-top: 20px;
@@ -165,6 +167,32 @@ body {
   .container-list button:hover {
     background-color: #4049c5;
     transition: background-color 0.2s ease-in;
+  }
+
+/*FOOTER*/
+
+  .footer{
+    font-family:georgia;
+    position:relative;
+    bottom:-35px;
+    left:0;
+    right:0;
+    text-align: center;
+ }
+   .madeby{
+     color:rgb(170, 29, 29);
+   }
+   .paulmattthew{
+     color: blue;
+   }
+
+
+   .error-messages{/*will try to fix this*/
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    font-weight:500;
+    align-items:center;
   }
 
  /*list fade in*/
@@ -198,7 +226,7 @@ body {
   }
 
 /*The background ripple code below */
-header{
+header{/*Need this here so that the background ripple doesn't change screen size*/
   min-height: 100vh;
   background-color: #42A5F5;
   position:fixed;
@@ -264,4 +292,23 @@ main{
 }
 
 
+.logo .logomsg {
+  visibility: hidden;
+  width: 60px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 10px;
+  padding: 5px 0;
 
+  /* Position the tooltip */
+  position: absolute;
+  right:0;
+  top:55px;
+  z-index: 1;
+}
+
+.logo:hover .logomsg {
+  visibility: visible;
+}

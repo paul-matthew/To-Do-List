@@ -14,29 +14,32 @@
         <div class="ripple-5"></div>
     </header>
     <body>
-    <div class="container-parent">
-        <div class="container-header">
-            <div class="header">
-                <h1 id="title2">To Do List</h1>
-            </div>
-            <div class="Affirmation">
-                <p id="enjoy"> Enjoy your <span id="weekday"></span>🌅😎</p> 
-            </div>
-        </div>
-        <div class="container-logo">    
+    <div class="full-page">
+        <div class="container-banner">    
             <div class="logo">
-                <img src="Logo.png" onclick="window.location.href='https://paul-matthew-portfolio.netlify.app/';" id="checkmark" width=55px; height=55px;>
+                <img class="PM" src="Logo.png" onclick="window.location.href='https://paul-matthew-portfolio.netlify.app/';" id="checkmark" width=55px; height=55px;>
+                <span class="logomsg">Portfolio</span>
+            </div>
+            <div class="container-header">
+                <div class="header">
+                    <h1 id="title2">To Do List</h1>
+                </div>
+                <div class="Affirmation">
+                    <p id="enjoy"> Enjoy your <span id="weekday"></span>🌅</p> 
+                </div>
             </div>
         </div>
-        <div class="container-input">
-            <div id="newtask">
-                <input class="input" type="text" id="enter" placeholder="Enter Task ..." maxlength="100" autofocus="autofocus">
-                <button class="ripple" onclick="clears()" id="clear"> Clear </button>
-                <button class="ripple" onclick="addToDo();counter()" id="add"> Add </button>
+        <div class="container-content">
+            <div class="container-input">
+                <div id="newtask">
+                    <input class="input" type="text" id="enter" placeholder="Enter Task ..." maxlength="100" autofocus="autofocus">
+                    <button class="ripple" onclick="clears()" id="clear"> Clear </button>
+                    <button class="ripple" onclick="addToDo();counter()" id="add"> Add </button>
+                </div>
             </div>
-        </div>
-        <div class="container-list" style="overflow:auto">   
+            <div class="container-list" style="overflow:auto">   
             <ul id="todos"; ></ul>
+            </div>
         </div>
         <div class="footer">
             <span class="madeby">Made by: </span><span class="paulmattthew">Paul.Matthew</span>🌺
