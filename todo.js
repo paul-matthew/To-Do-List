@@ -154,3 +154,37 @@ window.onload=function testtest(){
   if(p==0){document.querySelector("#clear").style.background="grey";
   }
 }
+
+//MENU BAR
+/*
+function myFunction() {
+  var x=document.getElementById("mydropdown");
+  if(x.className==="navigate"){
+    x.className += " responsive";
+  }
+  else{
+    x.className="navigate"
+  }
+}
+*/
+
+function dropdown(){
+  document.getElementById("mydropdown").classList.toggle("showme");
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+
+window.addEventListener('click',function(event) {
+  if (!event.target.matches('.menuicon')) {
+    var dropdowns = document.getElementsByClassName("dropdown");
+    var m;
+    for (m = 0; m < dropdowns.length; m++) {
+      var openDropdown = dropdowns[m];
+      if (openDropdown.classList.contains('showme')) {
+        openDropdown.classList.remove('showme');
+        console.log(dropdown.length);
+      }
+    }
+  }
+})
