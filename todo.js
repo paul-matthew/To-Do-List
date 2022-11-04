@@ -175,16 +175,11 @@ function dropdown(){
 
 // Close the dropdown menu if the user clicks outside of it
 
-window.addEventListener('click',function(event) {
-  if (!event.target.matches('.menuicon')) {
-    var dropdowns = document.getElementsByClassName("dropdown");
-    var m;
-    for (m = 0; m < dropdowns.length; m++) {
-      var openDropdown = dropdowns[m];
-      if (openDropdown.classList.contains('showme')) {
-        openDropdown.classList.remove('showme');
-        console.log(dropdown.length);
-      }
+window.onclick = function(e) {
+  if (!e.target.matches('.menubar')) {
+  var myDropdownop = document.getElementById("mydropdown");
+    if (myDropdownop.classList.contains('showme')) {
+      myDropdownop.classList.remove('showme');
     }
   }
-})
+}

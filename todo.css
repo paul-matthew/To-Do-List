@@ -19,6 +19,7 @@ body {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  padding-bottom: 7px;
   z-index:2
 }
 .logo{
@@ -41,10 +42,10 @@ body {
   z-index: 3;
 }
 .menubar {
-  width: 35px;
+  width: 28px;
   height: 5px;
   background-color: black;
-  margin: 6px 0;
+  margin: 1px 0;
 }
 .menuicon:hover .menubar {
   background-color: rgb(184, 182, 182);
@@ -54,7 +55,7 @@ body {
 .dropdown {
   display:none;
   position:relative;
-  top:32px;
+  top:59px;
   right:16px;
   width: 90px;
   background-color: black;
@@ -183,7 +184,7 @@ h1 {
     white-space: nowrap;
     font-weight: bolder;
     align-items: center;
-    background-image:linear-gradient(#63b5f8,grey);
+    background-image:linear-gradient(#63b5f8,);
     padding: 0px 5px;
     margin-top: 0px;
     list-style-type: none;/*to remove the bullet symbols*/
