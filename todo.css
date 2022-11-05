@@ -22,17 +22,8 @@ body {
   padding-bottom: 7px;
   z-index:2
 }
-.logo{
-  position:absolute;
-  right: 0;
 
-}
-.PM:hover {
-  filter: brightness(0) invert(1);
-  transition: filter 0s ease-in;
-}
-
-/*MENU BAR*/
+/*menu bar*/
 
 .menu{
   position:fixed ;
@@ -49,7 +40,6 @@ body {
 }
 .menuicon{
   display: inline-block;
- 
   cursor: pointer;
 }
 .menuicon:hover .menubar {
@@ -72,7 +62,7 @@ body {
   display:block;
 }
 
-/* Style the links inside the navigation bar */
+/*menu bar:links */
 .dropdown a {
   float: left;
   display: block;
@@ -82,33 +72,27 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-
-/* Change the color of links on hover */
 .dropdown a:hover {
   background-color: #ddd;
   width: 90px;
   color: black;
 }
 
-
-
-
+/*title block*/
 h1 {
   font-size: 50px; color: rgb(1, 1, 43);
   text-align: center; 
-  right:10px;
 }
 #enjoy {
   font-size: 20px; color: rgb(214, 214, 228);
   text-align: center;  
 }
 
-/*MAIN CONTENT*/
+/*INPUT CONTAINER*/
 
 .container-content{
   margin-top: 80px;
 }
-
 
 .container-input{
   width: 450px;
@@ -165,8 +149,10 @@ h1 {
     background-color: #4049c5;
     transition: background-color 0.2s ease-in;
   }
- 
+
+/*LIST CONTAINER*/  
 .container-list {
+  background-image:linear-gradient(#63b5f8,rgb(122, 122, 196));
   border-radius: 10px;
   border: 5px solid blue;
   border-style:outset;
@@ -179,9 +165,7 @@ h1 {
   margin:auto;
   display:flex; /*So that the overflow defaults to scrolled all the way to the right*/
   flex-direction: row-reverse; /*So that the overflow defaults to scrolled all the way to the right*/
-  top: 35px;
-  
-  
+  top: 35px;  
 }
 
   #todos{
@@ -189,7 +173,7 @@ h1 {
     white-space: nowrap;
     font-weight: bolder;
     align-items: center;
-    background-image:linear-gradient(#63b5f8,rgb(122, 122, 196));
+    
     padding: 0px 5px;
     margin-top: 0px;
     list-style-type: none;/*to remove the bullet symbols*/
@@ -197,11 +181,6 @@ h1 {
     position:relative;
     text-align: right; 
   }
-/*@media only screen and (max-width: 600px) {
-  #enter {
-    width: 15em;
-  }
-}*/
 
   .container-list button {
     font-family: sans-serif;
@@ -229,17 +208,32 @@ h1 {
     background-color: #4049c5;
     transition: background-color 0.2s ease-in;
   }
+/*list fade in*/
+  li {
+    animation: fade-anim 1s ease
+  }
+  @keyframes fade-anim {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+/*Done button strike*/
+  .strike {/* strikethrough done todo */
+    text-decoration: line-through;
+    color:red;
+  }
 
 /*FOOTER*/
 
-  .footer{
-    font-family:georgia;
-    position:relative;
-    bottom:-35px;
-    left:0;
-    right:0;
-    text-align: center;
- }
+.footer{
+  font-family:georgia;
+  position:relative;
+  bottom:-35px;
+  text-align: center;
+}
    .madeby{
      color:magenta;
    }
@@ -248,31 +242,8 @@ h1 {
    }
 
 
-   .error-messages{/*will try to fix this*/
-    display: flex;
-    position:absolute;
-    flex-direction: column;
-    font-weight:500;
-    align-items:center;
-  }
+/*BUTTON ANIMATION*/
 
- /*list fade in*/
-  li {
-    animation: fade-anim 1s ease
- }
- @keyframes fade-anim {
- 0% {
-     opacity: 0;
- }
- 100% {
-     opacity: 1;
- }
- }
-  .strike {/* strikethrough done todo */
-    text-decoration: line-through;
-    color:red;
-  }
-/*button animation below*/
   button {
     background-position: center;
     transition: background 0.8s;
@@ -350,26 +321,3 @@ main{
     opacity: 0;
   }
 }
-
-
-.logo .logomsg {
-  visibility: hidden;
-  width: 60px;
-  background-color: white;
-  color: black;
-  text-align: center;
-  border-radius: 5px;
-  font-size: 10px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  right:0;
-  top:55px;
-  z-index: 1;
-}
-
-.logo:hover .logomsg {
-  visibility: visible;
-}
-

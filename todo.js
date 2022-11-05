@@ -1,8 +1,4 @@
-//Day of the week code below
-var dt = new Date().toLocaleString('default',{weekday:'long'});
-document.getElementById('weekday').innerHTML=dt;
-
-//Main code below (ie. new entries,delete, done)
+//MAIN CODE (ie. new entries,delete, done)
 function addToDo() {
   if(document.querySelector('#newtask input').value.length == 0 && document.querySelector('#newtask input') ==document.activeElement){
     alert("Enter a Task");
@@ -16,8 +12,6 @@ function addToDo() {
     var entry = document.createElement('li'); // creats a new list element 
     entry.setAttribute('id', 'ToDo') // adds id to list element 
 
-    //var Input = document.createElement("input");//for the edit function..test test test
-
     var doneTodo = document.createElement("button");
     var deleteTodo = document.createElement("button"); // creates a button
     var editinp = document.createElement("button");
@@ -25,21 +19,29 @@ function addToDo() {
     deleteTodo.setAttribute('class', 'ripple')
     doneTodo.setAttribute('class', 'ripple')
     editinp.setAttribute('class', 'ripple')
-    //list.setAttribute('class','xx')
-    
    
     deleteTodo.setAttribute('id', 'deletetodobtn')
-    doneTodo.setAttribute('id', 'deletetodobtn')
+    doneTodo.setAttribute('id', 'donetodobtn')
     editinp.setAttribute('id', 'editbtn')
 
     deleteTodo.innerHTML = "🗑️" // button text  
-    doneTodo.innerHTML = "Done"
+    doneTodo.innerHTML = "☐"
     editinp.innerHTML = "✏️"
   
-    doneTodo.onclick = function doneTodo() { // function to delete list element (todo) 
-      entry.classList.toggle('strike'); // or just classList.add
+  //check mark function
+    var doneclick = 0;
+    doneTodo.onclick=function done(){
+      entry.classList.toggle('strike'); 
+      if ( doneclick % 2 == 0 ) {
+        doneTodo.innerHTML="🗹";
+      } 
+      else {
+        doneTodo.innerHTML="☐";
+      }
+      doneclick++
     }
   
+  //delete button function
     deleteTodo.onclick = function deleteTodo() { // function to delete list element (todo) 
       entry.remove();
       p--                             //this portion related to maximum entries code (see further below)
@@ -51,9 +53,8 @@ function addToDo() {
         document.querySelector("#clear").style.background="grey"
       }
     }
-
-    
-    //edit button function
+ 
+  //edit button function
     const paragraph = document.getElementById("todos");
  
     var clickCount = 0;
@@ -81,10 +82,8 @@ function addToDo() {
       }
       clickCount++
     }
-
-    
   }
-  
+  //append li and buttons to entry 
   entry.textContent = Input // adds  input text to list element 
   list.appendChild(entry); // adds element to list 
   entry.appendChild(editinp);
@@ -95,20 +94,18 @@ function addToDo() {
 
 }
 
-//for the maximum entries allowed in the list
+//MAX ENTRIES CHECK
 var p=0
 document.addEventListener("keypress", function onEvent(event) { // if enter is clicked todo is added
   if (event.key === "Enter" && p!==10 && document.querySelector('#newtask input') ==document.activeElement){
     addToDo();counter();
   }
 })
-
-function counter(){//can any of this code be replaced with a 'for' statement to be more efficent?
+function counter(){
   p++;
   if (p>=1){
     document.querySelector("#clear").style.background="";//To reset clear button to appear clickable
   }
-
   if(p>=10){
     alert("Maximum of 10 entries permitted")
     document.querySelector("#add").style.background="grey";  
@@ -124,7 +121,7 @@ function counter(){//can any of this code be replaced with a 'for' statement to 
   }
 }
 
-//To detect the maximum input characters allowed
+//MAX CHARACTERS CHECK
 document.addEventListener("keypress", function onEvent(event) { // if enter is clicked todo is added
   charactermax();
 })
@@ -133,7 +130,8 @@ function charactermax(){
     alert("Maximum characters reached")
   }
 }
-//Clear button:functionality
+
+//CLEAR BUTTON FUNCTION
 function clears(){
   if(p>0){
     var c=confirm("Confirm deletion of all existing entries");
@@ -149,32 +147,19 @@ function clears(){
     alert("Opps. No entries found to clear")
   }
 }
+
 //Clear button:set button to grey on load
 window.onload=function testtest(){
   if(p==0){document.querySelector("#clear").style.background="grey";
   }
 }
 
-//MENU BAR
-/*
-function myFunction() {
-  var x=document.getElementById("mydropdown");
-  if(x.className==="navigate"){
-    x.className += " responsive";
-  }
-  else{
-    x.className="navigate"
-  }
-}
-*/
-
+//MENU BUTTON FUNCTION
 function dropdown(){
   document.getElementById("mydropdown").classList.toggle("showme");
 
 }
-
 // Close the dropdown menu if the user clicks outside of it
-
 window.onclick = function(e) {
   if (!e.target.matches('.menuicon') && !e.target.matches('.menubar')) {
   var myDropdownop = document.getElementById("mydropdown");
@@ -183,3 +168,7 @@ window.onclick = function(e) {
     }
   }
 }
+
+//DAY OF THE WEEK CODE
+var dt = new Date().toLocaleString('default',{weekday:'long'});
+document.getElementById('weekday').innerHTML=dt;
