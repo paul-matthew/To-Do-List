@@ -29,7 +29,7 @@ function addToDo() {
     doneTodo.innerHTML = "⬜"
     editinp.innerHTML = "✏️"
   
-  //check mark function
+    //check mark function
     var doneclick = 0;
     doneTodo.onclick=function done(){
       entry.classList.toggle('strike'); 
@@ -42,7 +42,7 @@ function addToDo() {
       doneclick++
     }
   
-  //delete button function
+    //delete button function
     deleteTodo.onclick = function deleteTodo() { // function to delete list element (todo) 
       entry.remove();
       p--                             //this portion related to maximum entries code (see further below)
@@ -55,12 +55,14 @@ function addToDo() {
       }
     }
  
-  //edit button function
+    //edit button function
     const paragraph = document.getElementById("todos");
  
     var clickCount = 0;
     editinp.onclick=function checkClick(){
-      if ( clickCount % 2 == 0 ) {
+      clickCount++
+      console.log(clickCount)
+      if (clickCount % 2 != 0 ) {
         editinp.style.background="red"
         entry.contentEditable = true;
         editinp.contentEditable = false;
@@ -68,32 +70,34 @@ function addToDo() {
         deleteTodo.contentEditable = false;
         paragraph.style.backgroundColor = "#dddbdb";
         document.addEventListener("keypress", function onEvent(event) { // if enter is clicked todo is added
-          if (event.key === "Enter"){ 
+          if (event.key === "Enter" && clickCount%2!=0){
+            clickCount++
+            console.log(clickCount) 
             editinp.style.background=""
             entry.contentEditable = false;
             paragraph.style.backgroundColor = "#63b5f8";
+            return;
           }
         })
         window.onclick = function(i) {
-          if (!i.target.matches('.todoitem') && !i.target.matches('#editbtn')) {
+          if (!i.target.matches('.todoitem') && !i.target.matches('#editbtn') && clickCount%2!=0) {
+            clickCount++;
+            console.log(clickCount);
             editinp.style.background=""
             entry.contentEditable = false;
             paragraph.style.backgroundColor = "#63b5f8";
           }
         }
-
-          
-        
       } 
       else {
         editinp.style.background=""
         entry.contentEditable = false;
         paragraph.style.backgroundColor = "#63b5f8";
       }
-      clickCount++
-
     }
+   
   }
+    
 
   
 
