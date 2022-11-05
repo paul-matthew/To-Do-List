@@ -25,7 +25,7 @@ function addToDo() {
     editinp.setAttribute('id', 'editbtn')
 
     deleteTodo.innerHTML = "🗑️" // button text  
-    doneTodo.innerHTML = "☐"
+    doneTodo.innerHTML = "⬜"
     editinp.innerHTML = "✏️"
   
   //check mark function
@@ -33,10 +33,10 @@ function addToDo() {
     doneTodo.onclick=function done(){
       entry.classList.toggle('strike'); 
       if ( doneclick % 2 == 0 ) {
-        doneTodo.innerHTML="🗹";
+        doneTodo.innerHTML="✅";
       } 
       else {
-        doneTodo.innerHTML="☐";
+        doneTodo.innerHTML="⬜";
       }
       doneclick++
     }
