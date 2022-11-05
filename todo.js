@@ -1,6 +1,6 @@
 //MAIN CODE (ie. new entries,delete, done)
 function addToDo() {
-  if(document.querySelector('#newtask input').value.length == 0 && document.querySelector('#newtask input') ==document.activeElement){
+  if(document.querySelector('#newtask input').value.length == 0){
     alert("Enter a Task");
     if(p<=0){p=0} //to make sure that var p (for tracking max entries) doesn't increase on invalid entry
     else{p--}    
@@ -9,8 +9,9 @@ function addToDo() {
   else{
     var Input = document.getElementById("enter").value // gets input from input box
     var list = document.getElementById('todos'); // gets the list div from html doc
-    var entry = document.createElement('li'); // creats a new list element 
-    entry.setAttribute('id', 'ToDo') // adds id to list element 
+    var entry = document.createElement('li'); // creates a new list element 
+    entry.setAttribute('id', 'ToDo') // adds id to list element
+    entry.setAttribute('class', 'tets')
 
     var doneTodo = document.createElement("button");
     var deleteTodo = document.createElement("button"); // creates a button
@@ -67,13 +68,22 @@ function addToDo() {
         deleteTodo.contentEditable = false;
         paragraph.style.backgroundColor = "#dddbdb";
         document.addEventListener("keypress", function onEvent(event) { // if enter is clicked todo is added
-          if (event.key === "Enter"){
-            
+          if (event.key === "Enter"){ 
             editinp.style.background=""
             entry.contentEditable = false;
             paragraph.style.backgroundColor = "#63b5f8";
           }
         })
+        window.onclick = function(i) {
+          if (!i.target.matches('.tets') && !i.target.matches('#editbtn')) {
+            console.log("ah yo")
+            editinp.style.background=""
+            entry.contentEditable = false;
+            paragraph.style.backgroundColor = "#63b5f8";
+          }
+        }
+          
+        
       } 
       else {
         editinp.style.background=""
@@ -81,8 +91,12 @@ function addToDo() {
         paragraph.style.backgroundColor = "#63b5f8";
       }
       clickCount++
+
     }
   }
+
+  
+
   //append li and buttons to entry 
   entry.textContent = Input // adds  input text to list element 
   list.appendChild(entry); // adds element to list 
