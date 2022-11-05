@@ -11,7 +11,7 @@ function addToDo() {
     var list = document.getElementById('todos'); // gets the list div from html doc
     var entry = document.createElement('li'); // creates a new list element 
     entry.setAttribute('id', 'ToDo') // adds id to list element
-    entry.setAttribute('class', 'tets')
+    entry.setAttribute('class', 'todoitem')
 
     var doneTodo = document.createElement("button");
     var deleteTodo = document.createElement("button"); // creates a button
@@ -75,13 +75,13 @@ function addToDo() {
           }
         })
         window.onclick = function(i) {
-          if (!i.target.matches('.tets') && !i.target.matches('#editbtn')) {
-            console.log("ah yo")
+          if (!i.target.matches('.todoitem') && !i.target.matches('#editbtn')) {
             editinp.style.background=""
             entry.contentEditable = false;
             paragraph.style.backgroundColor = "#63b5f8";
           }
         }
+
           
         
       } 
