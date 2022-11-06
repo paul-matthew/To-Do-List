@@ -1,3 +1,7 @@
+html{
+  height: 100%;
+}
+
 *,
 *:before,
 *:after{
@@ -7,15 +11,16 @@
   }
 body {
   background: linear-gradient(#42A5F5,blue);
-  height:100vh;
+  height:100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /*BANNER*/
 
 .container-banner{
   overflow:hidden;
-  background-image: linear-gradient(#42A5F5,blue);
-  border: 3px solid #42A5F5;
+  background: white;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -29,14 +34,14 @@ body {
   position:fixed ;
   left:0;
   top:0;
-  margin:25px;
+  margin:18px;
   z-index: 3;
 }
 .menubar {
-  width: 40px;
-  height: 6px;
+  width: 30px;
+  height: 4px;
   background-color: black;
-  margin: 7px 0;
+  margin: 4px 0;
 }
 .menuicon{
   display: inline-block;
@@ -50,10 +55,10 @@ body {
 .dropdown {
   display:none;
   position:relative;
-  top:23px;
-  right:20px;
+  top:31px;
+  right:16px;
   width: 90px;
-  background-color: black;
+  background-color: blue;
   overflow: hidden;
   font-family: sans-serif;
 }
@@ -79,14 +84,33 @@ body {
 }
 
 /*title block*/
+
 h1 {
-  font-size: 50px; color: rgb(1, 1, 43);
-  text-align: center; 
+  text-align: center;
+  color:#222; font-size:40px; font-weight:400;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px; color:#c50000;
 }
-#enjoy {
-  font-size: 20px; color: rgb(214, 214, 228);
-  text-align: center;  
+.Affirmation {
+    font-size:16px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+    text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 0px;
+    align-items: center;
 }
+
+.Affirmation:after,.Affirmation:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+  background-color:#f8f8f8;
+}
+
 
 /*INPUT CONTAINER*/
 
@@ -115,7 +139,7 @@ h1 {
     font-weight: 500;
     border-radius: 5px;
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     border: 2px solid #d1d3d4;
   }
 
@@ -131,7 +155,7 @@ h1 {
     position: relative;
     float: right;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17px;
     background-color: #0d75ec;
     border: none;
     color: #ffffff;
@@ -158,7 +182,7 @@ h1 {
   border-style:outset;
   min-width: 450px;
   width:70%;
-  height:63vh;
+  height:60vh;
   position:relative;
   left:0;
   right:0;
@@ -190,7 +214,7 @@ h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 17px;
     background-color: #0d75ec;
     color: #ffffff;
     border: none;
@@ -229,16 +253,22 @@ h1 {
 /*FOOTER*/
 
 .footer{
-  font-family:georgia;
-  position:relative;
-  bottom:-35px;
+  color:#222; font-size:16px; font-weight:400;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  height:30px;
   text-align: center;
+ 
 }
    .madeby{
-     color:magenta;
+     color:#c50000;
    }
-   .paulmattthew{
-     color: rgba(255, 255, 255, 0.61);
+   .paulmatthew{
+     color: black;
    }
 
 
@@ -305,12 +335,6 @@ header{/*Need this here so that the background ripple doesn't change screen size
 .ripple-5{
   animation-delay: 5s;
 }
-
-main{
-  height: 4000px;
-  background-color: #f7f7f7;
-}
-
 @keyframes ripple{
   0%{
     transform: translate3d(-50%, 50%, 0) scale(0);
@@ -321,3 +345,4 @@ main{
     opacity: 0;
   }
 }
+
