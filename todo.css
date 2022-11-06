@@ -9,11 +9,19 @@ html{
     margin: 0;
     box-sizing: border-box;
   }
-body {
-  background: linear-gradient(#42A5F5,blue);
-  height:100%;
+@media (max-width:768px){
+  body{background: #42A5F5;
+    height:100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  }
+}
+@media (min-width:769px){
+  body{background: linear-gradient(#42A5F5,blue);  
+    height:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 }
 
 /*BANNER*/
