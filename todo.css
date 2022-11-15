@@ -61,7 +61,6 @@ html{
 }
 
 .dropdown {
-  display:none;
   position:relative;
   top:31px;
   right:16px;
@@ -69,10 +68,15 @@ html{
   background-color: blue;
   overflow: hidden;
   font-family: sans-serif;
-}
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 
+  max-height:0;
+  overflow-y:hidden;
+
+}
 .showme {
-  display:block;
+  max-height: 100px;
 }
 
 /*menu bar:links */
